@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href=styles/story.css>
+    </head>
+    <body>
+        <div class="temple-hallway background">
+            <div id="main-layout">
+                <p>The riddle is:<br><br>If you break me I do not stop working; if you touch me I may be snared; if you lose me nothing will matter.<br><br>What is the answer?</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="final-room.html">your heart</a>
+                <a class="bottom-centre" href="final-room.html">don't know the answer</a>
+                <a class="bottom-right" href="final-room.html">move out the way, peasant</a>
+            </div>
+        </div>
+        
+        <script>
+            const links = document.getElementsByTagName('a');
+            
+            // for loop is checking how many 'a' elements, when one is clicked 'riddle-answer' and the index will be stored in the session
+            for (let i = 0; i < links.length; i++) {
+                links[i].onclick = function ClickLink() {
+                    sessionStorage.setItem('riddle-answer', i);
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+/* properties of the name 'Indi's Story' */ 
+header {
+    font-size: 65px;
+    text-align: center;
+    font-family: monospace;
+    margin: 1%;
+    box-sizing: border-box;
+    text-shadow: 2px 2px white;
+}
+
+/* to keep the text within an area */
+#main-layout {
+    background-color: rgb(0,0,0,0.7); /* setting the colour of the background and also the opacity */
+    position: absolute;
+    border: 7.5px solid black; /* setting the size, style and colour */
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+    max-height: 40%; /* sets the maximum height */
+    overflow-y: auto; /* when the max-height is readched a scroll bar will appear on the 'y' axis */
+    cursor: default; 
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* to keep the buttons within an area */
+#button-layout {
+    width: 100vw; /* the entire width of the screen, no matter what size the screen size is */
+    position: fixed;
+    bottom: 0%; /* keeping the buttons as close to the bottom of the page */
+    min-height: 15%;
+}

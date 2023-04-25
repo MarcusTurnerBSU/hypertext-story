@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">
+                <p>You notice three objects in the room. A coffin, bookshelf and pot. Which one will you search first?</p>
+            </div>   
+            <div id="button-layout">
+                <a class="bottom-left" href="open-room-coffin.html">open coffin</a>
+                <a class="bottom-centre" href="open-room-bookshelf.html">Search the bookshelf</a>
+                <a class="bottom-right" href="open-room-pot.html">look in the pot</a>
+            </div>    
+        </div>
+        
+        <script>
+            const coffinState = sessionStorage.getItem('coffin-state');
+            const potState = sessionStorage.getItem('pot-state');
+            const bookshelfState = sessionStorage.getItem('bookshelf-state');
+            
+            // this is getting all of the 'a' links in this document
+            const links = document.getElementsByTagName('a');
+            
+            // this nested if statement is checking which item the user has selected first. It will remove that option and if need be move any of the remaining options  
+            if (coffinState == 'open') {
+                links[0].remove();
+                links[0].className = 'bottom-left';
+                // these if statement are checking which item the has selected second. It will remove that option and will move the remaining option to the centre of the page
+                if (bookshelfState == 'open') {
+                    links[0].remove();
+                    links[0].className = 'bottom-centre';
+                }
+                else if (potState == 'open') {
+                    links[1].remove();
+                    links[0].className = 'bottom-centre';
+                }
+            }
+            else if (potState == 'open') {                
+                links[2].remove();
+                links[1].className = 'bottom-right';
+                
+                if (coffinState == 'open') {                    
+                    links[0].remove();
+                    links[0].className = 'bottom-centre';
+                }
+                else if (bookshelfState == 'open') {                    
+                    links[1].remove();
+                    links[0].className = "bottom-centre";
+                }
+            }
+            else if (bookshelfState == 'open') {                
+                links[1].remove();
+                
+                if (coffinState == 'open') {                    
+                    links[0].remove();
+                    links[0].className = "bottom-centre";
+                }
+                else if (potState == 'open') {                    
+                    links[1].remove();
+                    links[0].className = "bottom-centre";
+                }
+            }
+        </script>
+    </body>
+</html>

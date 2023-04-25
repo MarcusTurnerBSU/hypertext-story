@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <script>            
+            const treasureMap = sessionStorage.getItem('treasure-map');
+            
+            if (treasureMap == 'true') {
+                location.href = 'with-treasure-map.html';
+            } else {
+                location.href = 'without-treasure-map.html';
+            }
+        </script>
+    </body>
+</html> 

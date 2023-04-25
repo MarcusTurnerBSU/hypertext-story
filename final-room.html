@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="temple-hallway background">
+            <div id="main-layout">
+                <p id="response">Placeholder</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-right" href="chest.html">Next</a>
+            </div>
+        </div>
+        
+        <script>
+            const riddleAnswer = sessionStorage.getItem('riddle-answer')
+            
+            // if the user accesses this page without a 'riddle-answer' the text will say "Placeholder" to inform them that something should be there
+            if (riddleAnswer !== null) {
+                const responseParagraph = document.getElementById('response');
+                
+                // places all the possible responses to the user into an array. Whichever link the user clicked prior to this screen, the index of the links and array matchup  
+                const responses = [
+                    'You have answered the riddle correctly, enjoy your prize.',
+                    'The spirit appreciates your honesty and moves out of the way.',
+                    'The spirit does as you say and moves out of the way.',
+                ];
+                // tells the user the response from the answer they selected
+                responseParagraph.textContent = responses[riddleAnswer];
+            }
+        </script>
+    </body>
+</html>

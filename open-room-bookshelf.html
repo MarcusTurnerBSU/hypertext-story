@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">
+                <p id="text">You decide to look through the bookshelf... You find a dirty old book with no use to you.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="open-room.html">pick another object to look at</a>
+                <a class="bottom-right" href="temple-hallway.html">head back to the hallway</a>
+            </div>
+        </div>
+        <script>
+            sessionStorage.setItem('bookshelf-state', 'open');
+            
+            const coffinState = sessionStorage.getItem('coffin-state');
+            const potState = sessionStorage.getItem('pot-state');
+            const bookshelfState = sessionStorage.getItem('bookshelf-state');
+            
+            // if statement is checking whether all three options have been clicked and then removes the option 'pick another object to look at' so the user can only go back to the hallway  
+            if (coffinState && potState && bookshelfState == 'open') {
+                const links = document.getElementsByTagName('a');
+                
+                links[0].remove();
+                links[0].className = 'bottom-centre';
+            }
+        </script>
+    </body>
+</html>

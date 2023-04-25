@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div id="main-layout">
+            <p id="text">You were rude to the spirit and it took any souvenirs that you collected. You ended up with the bad ending, try again and to get a better one.</p> 
+        </div>
+        <div id="button-layout">
+            <a class="bottom-centre" href="start-story.html">Restart</a>
+        </div>
+        <script>
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = 'You shouldn\'t be rude Indi!! See what happens... ' + text.textContent;
+            }
+            else {
+                text.textContent = 'Maybe I should have been honest to the spirit. ' + text.textContent; 
+            }
+        </script> 
+    </body>
+</html>           

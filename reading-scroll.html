@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="temple-hallway background">
+            <div id="main-layout">
+                <p id="text">Hi Indi, this is your grandfather. I hope you enjoyed this little adventure that I made for you.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-right" href="happy-ending.html">Next</a>
+            </div>
+        </div>
+        <script>
+            const text = document.getElementById('text');
+            
+            const treasureMap = sessionStorage.getItem('treasure-map');
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (treasureMap == 'true' && withFriend == 'true') {
+                text.textContent = text.textContent + ' I wish I was still around to see how excited you got when completing this adventure. I loved you very much and always will, love your grandfather. That\'s really sweet Indi!!';
+            }
+            else if (treasureMap == 'true') {
+                text.textContent = text.textContent + ' I wish I was still around to see how excited you got when completing this adventure. I loved you very much and always will, love your grandfather. Indi misses his grandfather!';
+            }
+            else if (withFriend == 'true') {
+                text.textContent = text.textContent + ' That\'s awesome, your grandfather is the best, Indi.';
+            }
+            else {
+                text.textContent = text.textContent + ' Indi can\'t wait to go home and tell his grandfather all about it!';
+            }
+        </script>    
+    </body>
+</html>                 

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <script>            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                location.href = 'barrier-right-door-opened.html';
+            } else {
+                location.href = 'barrier-right-door-closed.html';
+            }
+        </script>
+    </body>
+</html>  

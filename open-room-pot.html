@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">
+                <p id="text">You decide to look in the pot... The pot is empty.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="open-room.html">pick another object to look at</a>
+                <a class="bottom-centre" href="temple-hallway.html">head back to the hallway</a>
+                <a class="bottom-right" href="disappointing-ending.html">leave the temple</a>
+            </div>
+        </div>
+        <script>
+            sessionStorage.setItem('pot-state', 'open');
+            
+            const coffinState = sessionStorage.getItem('coffin-state');
+            const potState = sessionStorage.getItem('pot-state');
+            const bookshelfState = sessionStorage.getItem('bookshelf-state');
+            
+            if (coffinState && potState && bookshelfState == 'open') {
+                const links = document.getElementsByTagName('a');
+                
+                links[0].remove();
+                links[0].className = 'bottom-left';
+            }
+            
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = text.textContent + ' Let\'s leave Indi. There\'s nothing here.';
+            } else {
+                text.textContent  = text.textContent + ' Indi asks himself if he should leave or investigate the temple further.';
+            }
+        </script>        
+    </body>
+</html>

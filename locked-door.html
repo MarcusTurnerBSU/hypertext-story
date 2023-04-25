@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="barrier-door background">
+            <div id="main-layout">
+                <p id="text">The door is locked. You need to find a key to unlock it.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="disappointing-ending.html">leave the temple</a>
+                <a class="bottom-centre" href="check-key.html">unlock the door with key</a>
+                <a class="bottom-right" href="temple-hallway.html">head back to the hallway</a>
+            </div>
+        </div>
+        <script>
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            else if (withFriend == 'true') {
+                text.textContent = text.textContent + ' Let\'s leave Indi. There\'s nothing here.';
+
+            } 
+            else {
+                text.textContent  = text.textContent + ' Indi asks himself if he should leave or investigate the temple further.';
+            }
+        </script>        
+    </body>
+</html>

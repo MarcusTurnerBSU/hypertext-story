@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">
+                <p id="text">You decide to open the coffin... You find a dirty rag inside the coffin.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="open-room.html">pick another object to look at</a>
+                <a class="bottom-right" href="temple-hallway.html">head back to the hallway</a>
+            </div>
+        </div>
+        <script>
+            sessionStorage.setItem('coffin-state', 'open');
+            
+            const coffinState = sessionStorage.getItem('coffin-state');
+            const potState = sessionStorage.getItem('pot-state');
+            const bookshelfState = sessionStorage.getItem('bookshelf-state');
+            
+            if (coffinState && potState && bookshelfState == 'open') {
+                const links = document.getElementsByTagName('a');
+                
+                links[0].remove();
+                links[0].className = 'bottom-centre';
+            }
+            
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = text.textContent + ' Indi\'s best friend shouts EEEEWWWWWW, That\'s disgustng!!';
+            } else {
+                text.textContent  = text.textContent + ' Indi finds the old rag interesting.';
+            }
+        </script>
+    </body>
+</html>

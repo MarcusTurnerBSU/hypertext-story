@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div id="main-layout">
+            <p id="text">You ended up with the disappointing ending, try again to get a better one.</p> 
+        </div>
+        <div id="button-layout">
+            <a class="bottom-centre" href="start-story.html">Restart</a>
+        </div>    
+        <script>
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = 'Indi and his best friend leave the temple without finding anything. ' + text.textContent;
+            } else {
+                text.textContent  = 'Indi leaves the temple without finding anything. ' + text.textContent;
+            }
+        </script> 
+    </body>
+</html> 

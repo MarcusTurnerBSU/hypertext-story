@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">            
+                <p id="text">You enter the room and it is empty. You notice out of the corner of your eye something on the floor. It's a key.</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="temple-hallway.html">go back to the first hallway</a>
+                <a class="bottom-centre" href="temple-second-hallway.html">go back to the second hallway</a>
+                <a class="bottom-right" href="temple-third-hallway.html">go back to the third hallway</a>
+            </div>
+        </div>
+        <script>
+            function key() {
+            };
+            
+            sessionStorage.setItem('key', 'true');
+            
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = text.textContent + ' Indi\'s best friend says where was that locked door again?';
+            } else {
+                text.textContent = text.textContent + ' Indi wonders where the locked door was again?';
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+/* this animation shows a typewriter effect */
+@keyframes typing {
+    from {
+        width: 0; /* the typing animation will start at 0 width */
+    }
+    to {
+        width: 230px; /* thw typing animation will finish at 230px width */
+    }
+}
+
+/* this changes the opacity at different stages, to then becoming fully visible to the user */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+       visibility: visible;
+    }
+    to {
+        visibility: visible;
+    }
+}
+
+/* this changes the visibility of the ghost that pops up on the screen */
+@keyframes ghost-bloom {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+        visibility: visible;
+        transform: scale(2); /* this enlarges the ghost image by *2 the original size */
+    }
+    
+    50% {
+        opacity: 0.75;
+        visibility: visible;
+        transform: scale(4);
+    }
+    
+    100% {
+        opacity: 0.25;
+        visibility: hidden;
+    }
+}

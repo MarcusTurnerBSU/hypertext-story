@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="path background">
+            <div id="main-layout">
+                <p id="text">Indi is walking along the path</p> <!-- having an id tag allows me to change it with JavaScript -->
+            </div>
+            <div id="button-layout">
+                <a class="bottom-right" href="temple-spotted.html">Next</a>
+            </div>
+        </div>  
+        <!-- this script is getting the id 'text' and depending the results of the if statement the text will join together -->
+        <script>      
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = text.textContent + ' with his best friend and following the treasure map.';
+            } else {
+                text.textContent = text.textContent + ' by himself and following the treasure map.';
+            }
+        </script>
+    </body>
+</html> 

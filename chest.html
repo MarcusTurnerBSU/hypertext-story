@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="temple-hallway background">
+            <div id="main-layout">
+                <p id="response">Placeholder</p>
+            </div>
+        </div>
+            <script>
+            const riddleAnswer = sessionStorage.getItem('riddle-answer')
+            
+            if (riddleAnswer !== null) {
+                const responseParagraph = document.getElementById('response');
+
+                const responses = [
+                    'You notice a chest at the end of the room, you open it and find a scroll inside of the chest.',
+                    'You notice a chest at the end of the room, you open it and find nothing inside.',
+                    'You notice a chest at the end of the room, you open it and there is nothing inside the chest.',
+                ];
+
+                responseParagraph.textContent = responses[riddleAnswer];
+                
+                // if statement is checking which answer the user as clicked and then sends them to the correct page
+                if (responses[riddleAnswer] == responses[0]) {
+                    setTimeout(function() {location.href = 'reading-scroll.html'}, 5000);
+                }
+                else if (responses[riddleAnswer] == responses[1]) {
+                    setTimeout(function() {location.href = 'okay-ending.html'}, 5000);
+                    }
+                else if (responses[riddleAnswer] == responses[2]) {
+                    setTimeout(function() {location.href = 'bad-ending.html'}, 5000);
+                }   
+            }
+            </script>
+    </body>
+</html>

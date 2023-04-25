@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    margin: none;
+}
+
+h1 {
+    background-color: black;
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    background-size: cover;
+    width: 230px;
+    position: fixed;
+    top: 40%;   
+    left: 50%;
+    transform: translateX(-50%); /* this keeps the text center no matter the window size */    
+    overflow: hidden; 
+    white-space: nowrap; /* this keeps the text on the same line */
+    letter-spacing: 0;
+    animation: 
+        typing 2.5s steps(40, end),
+        step-end infinite;
+}
+
+/* sets both elements to have the same text/font properties and saves a few lines of code */
+p, a {
+    font-family: monospace;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+/* button layout and functionality */
+a {
+    text-decoration: none;
+    position: fixed;
+    display: block;
+    background-color: rgb(0,0,0,0.7);
+    padding: 2rem;
+    border-radius: 25px;    
+    animation-name: fade-in; /* this animation is used to so the buttons can fade in */
+    animation-duration: 1s;
+    animation-delay: 3s; /* animation starts after 3 seconds */
+    animation-fill-mode: both;
+    visibility: hidden; /* starts hidden so the user can't click in the position of the button */
+}
+
+/* when the user hover overs the 'a' element */
+a:hover {
+     text-decoration: none; 
+     cursor: pointer;
+     background-color: rgb(0,0,0,0.75);
+     text-shadow: 5px;
+     color: gray;
+}
+
+/* setting the locations of where I want the buttons to appear */
+.bottom-left {
+    left: 2.5%;
+
+}
+
+.bottom-centre {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-right {
+    right: 2.5%;    
+}
+
+/* the position and functionality of the ghost */
+img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: ghost-bloom;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+    margin: 0 auto;
+    visibility: hidden;
+}

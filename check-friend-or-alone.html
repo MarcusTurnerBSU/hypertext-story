@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <!-- checking whether the session has stored 'with-friend and the following if statements sends the user to the correct HTML page -->
+        <script>            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                location.href = 'path-with-friend.html';
+            } else {
+                location.href = 'path-alone.html';
+            }
+        </script>
+    </body>
+</html>    

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="temple-spotted background">
+            <div id="main-layout">
+                <p id="text">Indi</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-right" href="temple-arrive.html">Next</a>
+            </div>
+        </div>
+        <script>      
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = text.textContent + '\'s best friend spots a temple in the distance.';
+            } else {
+                text.textContent = text.textContent + ' spots the temple.';
+            }
+        </script>
+    </body>
+</html>

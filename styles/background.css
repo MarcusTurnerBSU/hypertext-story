@@ -1,0 +1,57 @@
+/* allows images to be full screen, images can be called upon with the background id. This minuses the amount of code in the css file */
+.background {
+    min-height: 100%;
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/* selected the background image with the following image */
+.story-page {
+    background-image: url(/images/story-page.jpg);
+}
+
+.garden {
+    background-image: url(/images/garden.jpg);
+}
+
+.night {
+    background-image: url(/images/night.jpg);
+}
+
+.sun-rising {
+    background-image: url(/images/sun-rising.jpg);  
+}
+
+.funeral {
+    background-image: url(/images/funeral.jpg);
+}
+
+.attic {
+    background-image: url(/images/attic.jpg);
+}
+
+.path {
+    background-image: url(/images/path.jpg);
+}
+
+.temple-spotted {
+    background-image: url(/images/temple-spotted.jpg);
+}
+
+.temple-arrive {
+    background-image: url(/images/temple-arrive.jpg);
+}
+
+.temple-hallway {
+    background-image: url(/images/temple-hallway.jpg);
+}
+
+.open-room {
+    background-image: url(/images/open-room.jpg);
+}
+
+.barrier-door {
+    background-image: url(/images/barrier-door.jpg)
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div id="main-layout">
+            <p id="text">You ended up with the okay ending, try again to get a better one.</p>  
+        </div>
+        <div id="button-layout">
+            <a class="bottom-centre" href="start-story.html">Restart</a>
+        </div>
+        <script>
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            const coinSouvenir = sessionStorage.getItem('coin-souvenir');
+            const figurineSouvenir = sessionStorage.getItem('figurine-souvenir');
+            
+            if (withFriend == 'true' && coinSouvenir == 'true' && figurineSouvenir == 'true') {
+                text.textContent = 'Indi and his best friend leave the temple with the ancient coins and sarcophagus figurines they found in the temple. ' + text.textContent;
+            } 
+            else if (withFriend == 'true' && coinSouvenir == 'true') {
+                text.textContent = 'Indi and his best friend leave the temple with the ancient coins they found in the temple. ' + text.textContent;
+            } 
+            else if (withFriend == 'true' && figurineSouvenir == 'true') {
+                text.textContent = 'Indi and his best friend leave the temple with the sarcophagus figurines they found in the temple. ' + text.textContent;
+            }
+            else if (figurineSouvenir == 'true') {
+                text.textContent = 'Indi leaves the temple with the sarcophagus figurine that he found in the temple. ' + text.textContent;
+            }
+            else {
+                location.href = 'disappointing-ending.html';
+            }
+        </script> 
+    </body>
+</html> 

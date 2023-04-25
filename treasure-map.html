@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="attic background">
+            <div id="main-layout">
+                <p>Indi is going through all of his grandfather's things, when suddenly. He comes across a treasure map and from what he can see it looks like the treasure map that his grandfather was telling him about 2 years ago in the garden.<br><br>Indi becomes excited by this and he must explore the treasure map but he wondered whether to take his best friend with or not.<br><br>Do you go alone or find your best friend?</p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="go-alone.html">go alone</a>
+                <a class="bottom-right" href="with-friend.html">find your best friend</a>
+            </div>
+        </div>
+        <!-- this script is storing 'treasure-map' as 'true' in the user's browser for one session (true has been set a string, wouldn't work as a boolean) -->
+        <script>
+            function treasureMap() {
+            };
+            
+            sessionStorage.setItem('treasure-map', 'true');
+        </script>
+    </body>
+</html>        

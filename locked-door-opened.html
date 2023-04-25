@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <div class="open-room background">
+            <div id="main-layout">
+                <p id="text"></p>
+            </div>
+            <div id="button-layout">
+                <a class="bottom-left" href="temple-third-hallway.html">go back into the hallway</a>
+                <a class="bottom-right" href="okay-ending.html">leave the temple</a>
+            </div>
+        </div>
+        <script>
+            function figurineSouvenir() {
+            };
+            
+            sessionStorage.setItem('figurine-souvenir', 'true');
+            
+            const text = document.getElementById('text');
+            
+            const withFriend = sessionStorage.getItem('with-friend');
+            
+            if (withFriend == 'true') {
+                text.textContent = 'Indi and his best friend managed to unlock the door and have entered the room. They see a collection of mini sarcophagus figurines and decide to take one each.';
+            } 
+            else {
+                text.textContent = 'Indi managed to unlock the door himself and enters. He sees a collection of mini sarcophagus figurines in a pot and decides to take one for himself.';
+            }
+        </script>
+    </body>
+</html>

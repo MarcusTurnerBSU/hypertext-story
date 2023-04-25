@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <script>            
+            const key = sessionStorage.getItem('key');
+            
+            if (key == 'true') {
+                location.href = 'locked-door-opened.html';
+            } else {
+                location.href = 'locked-door.html';
+            }
+        </script>
+    </body>
+</html> 

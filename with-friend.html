@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Indi's Story</title>
+        <link rel="stylesheet" href="styles/story.css">
+    </head>
+    <body>
+        <script>
+            function goNext() {
+                location.href = 'check-friend-or-alone.html';
+            }
+            setTimeout(goNext, 0);
+            
+            sessionStorage.setItem('with-friend', 'true');
+        </script>
+    </body>
+</html>    
